@@ -22,6 +22,7 @@ if [ -f "$userresources" ]; then
 
     xrdb -merge "$userresources"
 
+fi
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
@@ -35,8 +36,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-
-$HOME/scripts/screenSetup.sh
 nitrogen --restore &
 key-mapper-control --command autoload &
 exec dbus-launch --autolaunch=$(cat /var/lib/dbus/machine-id) i3
